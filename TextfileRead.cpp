@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {
-	 std::fstream myfile("/home/bmsce/Documents/ada1BM17CS098/algorithm/Untitled2.txt", std::ios_base::in);
+	 std::fstream myfile("/home/bmsce/Documents/ada1BM17CS098/lab1/Untitled2.txt", std::ios_base::in);
 	int n,i,j,a[100],k,t,flag=-1;
 	
 	cout<<"Enter the number of testcases "<<endl;
