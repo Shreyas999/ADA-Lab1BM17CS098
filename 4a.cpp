@@ -1,46 +1,33 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-int adjacent[20][20];
-int visited[20];
-int n;
-void DFS(int vtx)
+int G[10][10],visited[10],n;
+void DFS(int i)
 {
-    int i;
-    cout<<vtx<<" ";
-    visited[vtx]=1;
-    for(i=0;i<n;i++)
-    {
-        if(adjacent[vtx][i] && !visited[i])
-            DFS(i);
-    }
-}
-
-void connected()
+int j;
+visited[i]=1;
+for(j=0;j<n;j++)
 {
-    int i;
-    for(i=0;i<n;i++)
-    {
-        if(!visited[i])
-        {
-            DFS(i);
-            cout<<"\n";
-        }
-    }
+if(!visited[j] && G[i][j]==1){
+cout<<endl<<i<<"->"<<j;
+DFS(j);
+}}
 }
-
 int main()
-{   
-    int i,j;
-	cout<<"Enter the size of square matrix:";
-    cin>>n;
-	cout<<"Enter the matrix:"<<endl;
-    for(i=0;i<n;i++)
-    {
-        for(j=0;j<n;j++)
-			cin>>adjacent[i][j];
-        visited[i]=0;
-    }
-	cout<<"Path:"<<endl;
-    connected();
-	return 0;
+{
+int i,j;
+clock_t start,end;
+cout<<"Enter number of vertices:";
+cin>>n;
+cout<<"\nEnter adjecency matrix of the graph:\n";
+for(i=0;i<n;i++)
+for(j=0;j<n;j++)
+cin>>G[i][j];
+for(i=0;i<n;i++)
+visited[i]=0;
+start = clock();
+DFS(0);
+end = clock();
+float exe = float(end - start)/CLOCKS_PER_SEC;
+cout<<"\nExecution:"<<exe;
+return 0;
 }
