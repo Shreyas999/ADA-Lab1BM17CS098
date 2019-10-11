@@ -51,8 +51,23 @@ int main() {
 	
     cout << "No of Islands: " << ctr << endl;
 	auto end = chrono::steady_clock::now();
-		cout << "\nElapsed time in milliseconds : " 
+		cout << "\nExecution Time : " 
 		<< chrono::duration_cast<chrono::milliseconds>(end - start).count()
 		<< " ms" << endl;
 	return 0;
 }
+
+/*
+OUTPUT:
+Enter no of rows and cols
+5
+5
+Enter elements of the array:
+1 1 0 0 0
+0 1 0 0 1
+1 0 0 1 1
+0 0 0 0 0
+1 0 1 1 0
+No of Islands: 4
+Execution time : 8e-06
+*/
