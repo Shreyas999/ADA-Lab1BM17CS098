@@ -1,5 +1,4 @@
-#include <iostream>
-#include <chrono>
+#include<bits/stdc++.h>
 using namespace std;
 
 int ctr = 0, flag = 0;
@@ -30,9 +29,10 @@ void dfs(int row, int col) {
     }
 }
 
-int main() {
-	auto start = chrono::steady_clock::now();
-    cout << "Enter no of rows and cols" << endl;
+int main()
+{
+    clock_t start,end;
+	cout << "Enter no of rows and cols" << endl;
     cin >> rows;
     cin >> cols;
     cout << "Enter elements of the array:" << endl;
@@ -40,6 +40,7 @@ int main() {
         for(int j = 0; j < cols; j++)
             cin >> arr[i][j];
     }
+    start = clock();
     for(int i = 0; i < rows; i++) {
         for(int j = 0; j < cols; j++)
             if(arr[i][j] == 1) {
@@ -48,12 +49,11 @@ int main() {
                 flag = 1;
             }
     }
-	
+
     cout << "No of Islands: " << ctr << endl;
-	auto end = chrono::steady_clock::now();
-		cout << "\nExecution Time : " 
-		<< chrono::duration_cast<chrono::milliseconds>(end - start).count()
-		<< " ms" << endl;
+	end=clock();
+    float exe = float(end - start)/CLOCKS_PER_SEC;
+    cout<<"\nExecution Time:"<<exe;
 	return 0;
 }
 
