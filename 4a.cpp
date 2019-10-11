@@ -31,3 +31,22 @@ float exe = float(end - start)/CLOCKS_PER_SEC;
 cout<<"\nExecution:"<<exe;
 return 0;
 }
+
+/*OUTPUT:
+Enter number of vertices:7
+Enter adjecency matrix of the graph:
+0 1 1 1 1 0 0 
+1 0 0 1 0 1 0
+1 0 0 0 0 0 1
+1 1 0 0 0 1 0
+1 0 0 0 0 0 1 
+0 1 0 1 0 0 0
+0 0 1 0 1 0 0 
+0->1
+1->3
+3->5
+0->2
+2->6
+6->4
+Execution:5.3e-05
+*/
