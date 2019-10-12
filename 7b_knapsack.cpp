@@ -57,3 +57,14 @@ int main()
 	knapsack(W,wt,val,n);
 	return 0; 
 }
+
+/*OUTPUT
+Enter the number of elements:5
+Enter the weight:6
+Enter the values:25 20 15 40 50 
+Enter the weights:3 2 1 4 5
+Maximum Profit :65
+Items and Weights:
+5 5
+3 1
+*/
