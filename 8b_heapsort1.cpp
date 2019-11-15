@@ -1,9 +1,9 @@
 #include <iostream>
 #include <limits.h>
 using namespace std; 
-#define N 5 
+int arr[10][10],n,k; 
 int ptr[501]; 
-void findSmallestRange(int arr[][N], int n, int k) 
+void findSmallestRange() 
 { 
 	int i,minval,maxval,minrange,minel,maxel,flag,minind; 
 	for(i = 0;i <= k;i++) 
@@ -49,16 +49,27 @@ void findSmallestRange(int arr[][N], int n, int k)
 }	
 int main() 
 { 
-	int arr[][N] = { 
-					{4, 7, 9, 12, 15}, 
-					{0, 8, 10, 14, 20}, 
-					{6, 12, 16, 30, 50} 
-					}; 
+	cout<<"Enter the number of lists:";
+	cin>>k;
+	cout<<"Enter the number of elements in each list:";
+	cin>>n;
+	cout<<"Enter the elements:"<<endl;
+	for(int i=0;i<k;i++)
+	{
+	    for (int j=0;j<n;j++)
+	        cin>>arr[i][j];
+	}
 	int k = 3;
-	findSmallestRange(arr,N,k); 
+	findSmallestRange(); 
 	return 0; 
-} 
-/*
-OUTPUT
-The smallest range is [6 8]
+}
+
+/*OUTPUT
+Enter the number of lists:3                                                                                                                
+Enter the number of elements in each list:2                                                                                                
+Enter the elements:
+4 7                                                                                                                     
+1 2                                                                                                                                        
+20 40                                                                                                                                      
+The smallest range is [2 20]
 */
