@@ -59,7 +59,6 @@ int main()
 	    for (int j=0;j<n;j++)
 	        cin>>arr[i][j];
 	}
-	int k = 3;
 	findSmallestRange(); 
 	return 0; 
 }
